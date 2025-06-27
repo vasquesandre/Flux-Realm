@@ -2,7 +2,7 @@
 
 Flux is a simple and organized **to-do list app** built using **Swift** and **UIKit**, with data persistence now powered by **Realm**. Users can create multiple categories and add tasks under each one.
 
-This project is based on my original [Flux](https://github.com/seu-usuario/Flux-CoreData) app, which used **Core Data**. In this version, I reused the structure and components of the original project but migrated the persistence layer to **Realm** to explore alternative data storage solutions in iOS development.
+This project is based on my original [Flux](https://github.com/vasquesandre/Flux) app, which used **Core Data**. In this version, I reused the structure and components of the original project but migrated the persistence layer to **Realm** to explore alternative data storage solutions in iOS development.
 
 This app is part of my learning journey through the [iOS & Swift - The Complete iOS App Development Bootcamp] by **Angela Yu** on **Udemy**.
 
