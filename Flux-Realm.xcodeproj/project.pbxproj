@@ -14,10 +14,25 @@
 		540442412E0F19A900EEBB5D /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5404423F2E0F19A900EEBB5D /* CategoryViewController.swift */; };
 		540442422E0F19A900EEBB5D /* TodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540442402E0F19A900EEBB5D /* TodoListController.swift */; };
 		540442452E0F19C700EEBB5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540442432E0F19C700EEBB5D /* Main.storyboard */; };
-		540442482E0F1A5900EEBB5D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 540442472E0F1A5900EEBB5D /* Realm */; };
 		5404424A2E0F1A5900EEBB5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 540442492E0F1A5900EEBB5D /* RealmSwift */; };
-		5404424C2E0F1A7E00EEBB5D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5404424B2E0F1A7E00EEBB5D /* Data.swift */; };
+		540442512E0F259300EEBB5D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540442502E0F259300EEBB5D /* Item.swift */; };
+		540442532E0F259A00EEBB5D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540442522E0F259A00EEBB5D /* Category.swift */; };
+		54B910C82E141678003FBC3D /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 540442492E0F1A5900EEBB5D /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		54B910C92E141678003FBC3D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				54B910C82E141678003FBC3D /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		540442112E0F18A200EEBB5D /* Flux-Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flux-Realm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,7 +44,8 @@
 		5404423F2E0F19A900EEBB5D /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		540442402E0F19A900EEBB5D /* TodoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListController.swift; sourceTree = "<group>"; };
 		540442442E0F19C700EEBB5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5404424B2E0F1A7E00EEBB5D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		540442502E0F259300EEBB5D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		540442522E0F259A00EEBB5D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +54,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5404424A2E0F1A5900EEBB5D /* RealmSwift in Frameworks */,
-				540442482E0F1A5900EEBB5D /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +110,8 @@
 		5404423D2E0F193F00EEBB5D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5404424B2E0F1A7E00EEBB5D /* Data.swift */,
+				540442522E0F259A00EEBB5D /* Category.swift */,
+				540442502E0F259300EEBB5D /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +135,7 @@
 				5404420D2E0F18A200EEBB5D /* Sources */,
 				5404420E2E0F18A200EEBB5D /* Frameworks */,
 				5404420F2E0F18A200EEBB5D /* Resources */,
+				54B910C92E141678003FBC3D /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,7 +143,6 @@
 			);
 			name = "Flux-Realm";
 			packageProductDependencies = (
-				540442472E0F1A5900EEBB5D /* Realm */,
 				540442492E0F1A5900EEBB5D /* RealmSwift */,
 			);
 			productName = "Flux-Realm";
@@ -189,10 +205,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				540442332E0F191C00EEBB5D /* AppDelegate.swift in Sources */,
-				5404424C2E0F1A7E00EEBB5D /* Data.swift in Sources */,
 				540442412E0F19A900EEBB5D /* CategoryViewController.swift in Sources */,
 				540442422E0F19A900EEBB5D /* TodoListController.swift in Sources */,
+				540442512E0F259300EEBB5D /* Item.swift in Sources */,
 				540442342E0F191C00EEBB5D /* SceneDelegate.swift in Sources */,
+				540442532E0F259A00EEBB5D /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,6 +242,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ND939278AP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flux-Realm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -252,6 +270,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ND939278AP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Flux-Realm/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -426,11 +445,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		540442472E0F1A5900EEBB5D /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 540442462E0F1A5900EEBB5D /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
 		540442492E0F1A5900EEBB5D /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 540442462E0F1A5900EEBB5D /* XCRemoteSwiftPackageReference "realm-swift" */;

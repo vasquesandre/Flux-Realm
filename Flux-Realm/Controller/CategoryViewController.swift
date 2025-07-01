@@ -6,10 +6,11 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryViewController: UITableViewController {
     
+    let realm = try! Realm()
     var categoryArray = [Category]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -59,10 +60,10 @@ class CategoryViewController: UITableViewController {
         let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Category", style: .default) { action in
-            let newCategory = Category(context: self.context)
+            let newCategory = Category()
             newCategory.name = textField.text!
             self.categoryArray.append(newCategory)
-            self.saveCategory()
+            self.save(category: newCategory)
         }
         
         alert.addTextField { (alertTextField) in
@@ -78,10 +79,12 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - Data Manipulation
     
-    func saveCategory() {
+    func save(category: Category) {
         
         do {
-            try context.save()
+            try realm.write {
+                realm.add(category)
+            }
         } catch {
             print("Error saving category: \(error)")
         }
@@ -92,15 +95,15 @@ class CategoryViewController: UITableViewController {
     
     func loadCategories() {
         
-        let request: NSFetchRequest<Category> = Category.fetchRequest()
-        
-        do {
-            categoryArray = try context.fetch(request)
-        } catch {
-            print("Error fetching category data from context: \(error)")
-        }
-        
-        tableView.reloadData()
+//        let request: NSFetchRequest<Category> = Category.fetchRequest()
+//        
+//        do {
+//            categoryArray = try context.fetch(request)
+//        } catch {
+//            print("Error fetching category data from context: \(error)")
+//        }
+//        
+//        tableView.reloadData()
         
     }
     
