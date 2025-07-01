@@ -77,6 +77,7 @@ class TodoListController: UITableViewController {
                         let newItem = Item()
                         newItem.title = textField.text!
                         currentCategory.items.append(newItem)
+                        print(newItem.dateCreated)
                     }
                 } catch {
                     print("Error saving item, \(error)")
@@ -106,28 +107,27 @@ class TodoListController: UITableViewController {
         tableView.reloadData()
     }
 }
-//
-////MARK: - UISearchBarDelegate
-//
-//extension TodoListController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        DispatchQueue.main.async {
-//            searchBar.resignFirstResponder()
-//        }
-//    }
-//    
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        if searchBar.text?.count == 0 {
-//            loadItems()
-//            
-//            DispatchQueue.main.async {
-//                searchBar.resignFirstResponder()
-//            }
-//        } else {
-//            let request: NSFetchRequest<Item> = Item.fetchRequest()
-//            let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
-//            request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-//            loadItems(with: request, predicate: predicate)
-//        }
-//    }
-//}
+
+//MARK: - UISearchBarDelegate
+
+extension TodoListController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        DispatchQueue.main.async {
+            searchBar.resignFirstResponder()
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text?.count == 0 {
+            loadItems()
+            
+            DispatchQueue.main.async {
+                searchBar.resignFirstResponder()
+            }
+        } else {
+            todoItems = todoItems?.filter("title CONTAINS[cd] %@", searchBar.text!).sorted(byKeyPath: "dateCreated", ascending: true)
+            
+            tableView.reloadData()
+        }
+    }
+}
