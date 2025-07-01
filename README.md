@@ -20,6 +20,7 @@ This app is part of my learning journey through the [iOS & Swift - The Complete 
 
 - Create and manage multiple **categories**
 - Add, check off, and delete **to-do items**
+- Filter items with search bar
 - Save all data locally using **Realm**
 
 ---
@@ -27,7 +28,6 @@ This app is part of my learning journey through the [iOS & Swift - The Complete 
 ## Work in Progress
 
 - Add swipe-to-delete functionality
-- Search bar to filter items
 - iCloud sync (future)
 
 ---
@@ -38,5 +38,6 @@ This app was developed to strengthen my skills in:
 - MVC architecture
 - UIKit components
 - Realm integration
+- Using external packages
 - Migrating persistence from Core Data to Realm
 - Writing clean and scalable Swift code
