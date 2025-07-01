@@ -77,7 +77,6 @@ class TodoListController: UITableViewController {
                         let newItem = Item()
                         newItem.title = textField.text!
                         currentCategory.items.append(newItem)
-                        print(newItem.dateCreated)
                     }
                 } catch {
                     print("Error saving item, \(error)")
