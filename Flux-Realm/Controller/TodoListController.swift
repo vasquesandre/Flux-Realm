@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListController: UITableViewController {
+class TodoListController: SwipeTableViewController {
     
     let realm = try! Realm()
     var todoItems: Results<Item>?
@@ -23,6 +23,12 @@ class TodoListController: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let safeCategory = selectedCategory {
+            title = safeCategory.name
+        }
+    }
+    
     //MARK: - TableView Datasouce Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +36,8 @@ class TodoListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
+        
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
         if let item = todoItems?[indexPath.row] {
             cell.textLabel?.text = item.title
@@ -71,11 +78,15 @@ class TodoListController: UITableViewController {
         
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             
+            guard let text = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines), !text.isEmpty else {
+                return
+            }
+            
             if let currentCategory = self.selectedCategory {
                 do {
                     try self.realm.write {
                         let newItem = Item()
-                        newItem.title = textField.text!
+                        newItem.title = text
                         currentCategory.items.append(newItem)
                     }
                 } catch {
@@ -87,14 +98,31 @@ class TodoListController: UITableViewController {
             
         }
         
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
             textField = alertTextField
         }
         
         alert.addAction(action)
+        alert.addAction(cancel)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: - Delete Data from Swipe
+    override func updateModel(at indexPath: IndexPath) {
+        
+        if let itemForDeletion = self.todoItems?[indexPath.row] {
+            do {
+                try self.realm.write {
+                    self.realm.delete(itemForDeletion)
+                }
+            } catch {
+                print("Error deleting item, \(error)")
+            }
+        }
     }
     
     //MARK: - Data Manipulation

@@ -17,6 +17,7 @@
 		5404424A2E0F1A5900EEBB5D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 540442492E0F1A5900EEBB5D /* RealmSwift */; };
 		540442512E0F259300EEBB5D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540442502E0F259300EEBB5D /* Item.swift */; };
 		540442532E0F259A00EEBB5D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540442522E0F259A00EEBB5D /* Category.swift */; };
+		546406842E15613B004E9BD5 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546406832E15613B004E9BD5 /* SwipeTableViewController.swift */; };
 		54B7F6A32E146D41006A6A5A /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = 54B7F6A22E146D41006A6A5A /* SwipeCellKit */; };
 		54B910C82E141678003FBC3D /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 540442492E0F1A5900EEBB5D /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -47,6 +48,7 @@
 		540442442E0F19C700EEBB5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		540442502E0F259300EEBB5D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		540442522E0F259A00EEBB5D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		546406832E15613B004E9BD5 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				5404423F2E0F19A900EEBB5D /* CategoryViewController.swift */,
 				540442402E0F19A900EEBB5D /* TodoListController.swift */,
+				546406832E15613B004E9BD5 /* SwipeTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				540442332E0F191C00EEBB5D /* AppDelegate.swift in Sources */,
 				540442412E0F19A900EEBB5D /* CategoryViewController.swift in Sources */,
 				540442422E0F19A900EEBB5D /* TodoListController.swift in Sources */,
+				546406842E15613B004E9BD5 /* SwipeTableViewController.swift in Sources */,
 				540442512E0F259300EEBB5D /* Item.swift in Sources */,
 				540442342E0F191C00EEBB5D /* SceneDelegate.swift in Sources */,
 				540442532E0F259A00EEBB5D /* Category.swift in Sources */,
