@@ -21,14 +21,16 @@ This app is part of my learning journey through the [iOS & Swift - The Complete 
 - Create and manage multiple **categories**
 - Add, check off, and delete **to-do items**
 - Filter items with search bar
+- Swipe-to-delete functionality
 - Save all data locally using **Realm**
 
 ---
 
-## Work in Progress
+## Future Work
 
-- Add swipe-to-delete functionality
-- iCloud sync (future)
+- Improve the UI/UX
+- Create a separate view to add categories or tasks
+- Add the option to select priority badges
 
 ---
 
